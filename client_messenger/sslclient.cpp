@@ -3,11 +3,11 @@
 sslclient::sslclient(QString serverIpPort, QObject *parent)
     : QObject{parent}
 {
-    QRegExp regIpPort("^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
+    QRegExp regIpPort("((?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))\\:(\\d{2,5})");
     regIpPort.indexIn(serverIpPort);
     QStringList list = regIpPort.capturedTexts();
     if (list.size() != 3){
-        qDebug() << "Incorrect ip and/or port";
+        qDebug() << "Incorrect IPv4 and/or port";
     }
     else{
         QStringList::iterator it = list.begin();
