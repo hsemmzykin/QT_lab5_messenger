@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    client = new sslclient("", this);
+    client = new sslclient(this);
 }
 
 MainWindow::~MainWindow()

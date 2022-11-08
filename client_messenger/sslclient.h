@@ -8,14 +8,15 @@ class sslclient : public QObject
 {
     Q_OBJECT
     QSslSocket * socket = nullptr;
-    QString serverIp = "127.0.0.1";
-    quint16 serverPort = 45678;
+    QString serverIp;
+    quint16 serverPort;
     QString status;
     QPixmap avatar;
+    QString myName;
     QString connectedDate;
-
+    QObject * parent = nullptr;
 public:
-    explicit sslclient(QString serverIpPort, QObject *parent = nullptr);
+    explicit sslclient(QObject *parent = nullptr, QString serverIpPort = "127.0.0.1:45678");
 
 public slots:
     void onConnected();
