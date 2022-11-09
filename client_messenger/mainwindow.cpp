@@ -57,25 +57,15 @@ void MainWindow::on_actionAbout_triggered()
     gridLayout->addWidget(qtlabel, 7, 1);
 
     QPushButton * close  = new QPushButton("Kill window", infoAboutAuthor);
+    QObject::connect(close, &QPushButton::clicked, this, &MainWindow::onButtonCloseDialogClicked);
 
     //! Add button slot that closes dialog!
-    connect(close, SIGNAL(clicked), infoAboutAuthor, SLOT(killDialogByPush()));
 
     infoAboutAuthor->setLayout(gridLayout);
     infoAboutAuthor->show();
 }
-void MainWindow::killDialogByPush(QCloseEvent* event){
-    QMessageBox::StandardButton answer = QMessageBox::question(
-                    this,
-                    "Close the Window",
-                    "Do you want to close the window?",
-                    QMessageBox::Yes | QMessageBox::No);
+void MainWindow::onButtonCloseDialogClicked(){
 
-        if(answer == QMessageBox::Yes){
-            event->accept();
-            close();
-        }
-        else
-            event->ignore();
 }
+
 

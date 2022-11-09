@@ -19,8 +19,7 @@ public:
 
 private slots:
     void on_sendButton_clicked();
-//    void on_actionConnect_to_server_triggered();
-    void killDialogByPush(QCloseEvent*);
+    void onButtonCloseDialogClicked();
     void on_actionAbout_triggered();
 
 private:
