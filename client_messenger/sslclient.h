@@ -7,6 +7,7 @@
 class sslclient : public QObject
 {
     Q_OBJECT
+public:
     QSslSocket * socket = nullptr;
     QString serverIp;
     quint16 serverPort;

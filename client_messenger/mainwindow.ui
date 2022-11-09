@@ -6,16 +6,123 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>831</width>
+    <height>625</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar"/>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTextBrowser" name="messageBox"/>
+    </item>
+    <item row="0" column="1" colspan="2">
+     <widget class="QListWidget" name="userList"/>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <widget class="QLineEdit" name="sendMessage"/>
+    </item>
+    <item row="1" column="2">
+     <widget class="QPushButton" name="sendButton">
+      <property name="text">
+       <string>Send</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>831</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionConnect_to_server"/>
+    <addaction name="actionDisconnect"/>
+    <addaction name="actionSave_to_XML"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <widget class="QMenu" name="menuChange_status">
+     <property name="title">
+      <string>Change status</string>
+     </property>
+     <addaction name="actionOnline"/>
+     <addaction name="separator"/>
+     <addaction name="actionDo_not_disturb"/>
+     <addaction name="actionNot_here"/>
+    </widget>
+    <addaction name="actionChange_IP_PORT"/>
+    <addaction name="actionChange_username"/>
+    <addaction name="menuChange_status"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuSettings"/>
+   <addaction name="menuHelp"/>
+  </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionConnect_to_server">
+   <property name="text">
+    <string>Connect to server</string>
+   </property>
+  </action>
+  <action name="actionDisconnect">
+   <property name="text">
+    <string>Disconnect</string>
+   </property>
+  </action>
+  <action name="actionSave_to_XML">
+   <property name="text">
+    <string>Save to XML</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionChange_IP_PORT">
+   <property name="text">
+    <string>Change IP:PORT</string>
+   </property>
+  </action>
+  <action name="actionChange_username">
+   <property name="text">
+    <string>Change username</string>
+   </property>
+  </action>
+  <action name="actionOnline">
+   <property name="text">
+    <string>Online</string>
+   </property>
+  </action>
+  <action name="actionDo_not_disturb">
+   <property name="text">
+    <string>Do not disturb</string>
+   </property>
+  </action>
+  <action name="actionNot_here">
+   <property name="text">
+    <string>Not here</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
